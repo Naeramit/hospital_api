@@ -4,8 +4,9 @@
   "description": "application for opd task",
   "main": "app.js.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "node src/test.js",
+    "start": "nodemon src/app.js",
+    "db:sync": "node src/initialize/database.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "sequelize": "^6.32.0"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "sequelize-cli": "^6.6.0"
   }
 }
