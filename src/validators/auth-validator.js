@@ -7,10 +7,10 @@ const registrySchema = Joi.object({
     confirmPassword: Joi.string().trim().required().valid(Joi.ref('password')).strip(),
     firstName: Joi.string().trim().required(),
     lastName: Joi.string().trim().required(),
-    gender: Joi.string().trim().pattern(/^[0-2]$/),
-    role: Joi.string().trim().pattern(/^[0-9]$/),
+    gender: Joi.number().integer(),
+    role: Joi.number().integer(),
     licenseNumber: Joi.string().trim(),
-    status: Joi.string().pattern(/^[0-2]{1,1}$/)
+    status: Joi.number().integer()
 })
 
 

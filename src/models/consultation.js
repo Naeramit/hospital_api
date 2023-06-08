@@ -9,6 +9,24 @@ module.exports = (sequelize, DataTypes) => {
         addition: DataTypes.TEXT,
         receivedDatetime: {
             type: DataTypes.DATE,
+        },
+        status: {
+          type: DataTypes.INTEGER,
+          defaultValue: 1,
+          allowNull: false,
+          validate: {
+              notEmpty: true
+          }
+          // '0: cancel 1: record
+        },
+        nextProcess: {
+          type: DataTypes.INTEGER,
+          defaultValue: 0,
+          allowNull: false,
+          validate: {
+              notEmpty: true
+          }
+          // '0:pending 1:pass-task 2:admit 3:discharge 4.refer   
         }
       },
       {
@@ -19,6 +37,14 @@ module.exports = (sequelize, DataTypes) => {
     consultation.associate = models => {
 
         consultation.hasMany(models.consultationDiagnosis, {
+          foreignKey: {
+            name: "consultationId",
+            allowNull: false
+          },
+          onDelete: 'RESTRICT'
+        });
+
+        consultation.hasMany(models.drugOrder, {
           foreignKey: {
             name: "consultationId",
             allowNull: false

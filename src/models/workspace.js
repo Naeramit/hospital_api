@@ -14,6 +14,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: 0
             // '0:undefined 1:OPD 2:ER 3:IPD'
+        },
+        status: {
+          type: DataTypes.INTEGER,
+          defaultValue: 1,
+          allowNull: false,
+          validate: {
+              notEmpty: true
+          }
+          // '0: not available   1: available'
         }
       },
       {
@@ -22,8 +31,6 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     workspace.associate = models => {
-
-      workspace.hasMany( models.user );
 
       workspace.hasMany(models.consultation,{
         foreignKey: {

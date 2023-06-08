@@ -6,9 +6,6 @@ const userController = require('../controllers/user-controller')
 const router = express.Router();
 
 
-router.patch('/changePW', userController.changeUserPassword )
-router.get('/myWS', userController.myWorkspace)
-router.patch('/updateMyWS',  userController.updateSelectedWorkspace)
-
+router.patch('/newpassword', userController.newPassword )
 
 module.exports = router;

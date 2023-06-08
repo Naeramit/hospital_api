@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    const  orderDrug = sequelize.define(
-      'orderDrug',
+    const  drugOrder = sequelize.define(
+      'drugOrder',
       { 
         receivedDatetime: {
             type: DataTypes.DATE,
@@ -12,6 +12,24 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 notEmpty: true
             }
+        },
+        status: {
+            type: DataTypes.INTEGER,
+            defaultValue: 1,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+            // '0: cancel   1: record'
+        },
+        onset: {
+            type: DataTypes.INTEGER,
+            defaultValue: 1,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+            // '0: undefined   1: OPD/ER  2: After discharge 3: After admit '
         }
       },
       {
@@ -19,9 +37,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     );
 
-    orderDrug.associate = models => {
+    drugOrder.associate = models => {
 
-        orderDrug.belongsTo(models.consultation, {
+        drugOrder.belongsTo(models.consultation, {
             foreignKey: {
               name: "consultationId",
               allowNull: false
@@ -29,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: 'RESTRICT'
         });
 
-        orderDrug.belongsTo(models.drug, {
+        drugOrder.belongsTo(models.drug, {
             foreignKey: {
             name: "drugId",
             allowNull: false
@@ -37,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: 'RESTRICT'
         });
 
-        orderDrug.belongsTo( models.drugDescription,{
+        drugOrder.belongsTo( models.drugDescription,{
             foreignKey: {
                 name: "drugDescriptionId",
                 allowNull: false
@@ -45,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: 'RESTRICT'
         });
 
-        orderDrug.belongsTo(models.user,{
+        drugOrder.belongsTo(models.user,{
             foreignKey: {
               name: "createdUserId",
               allowNull: false
@@ -54,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
         });
       
 
-        orderDrug.belongsTo(models.user, {
+        drugOrder.belongsTo(models.user, {
             foreignKey:{
                 name: 'receivedUserId',
             },
@@ -62,5 +80,5 @@ module.exports = (sequelize, DataTypes) => {
         });
     }
 
-    return orderDrug;
+    return drugOrder;
   };

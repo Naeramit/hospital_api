@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         status: {
             type: DataTypes.INTEGER,
-            defaultValue: 0,
+            defaultValue: 1,
             // '0:inactive 1:new  2:active'
             allowNull: false,
             validate: {
@@ -84,7 +84,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'RESTRICT'
     });
 
-    user.hasMany(models.orderDrug, {
+    user.hasMany(models.drugOrder, {
       foreignKey: {
         name: "createdUserId",
         allowNull: false
@@ -93,7 +93,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
 
-    user.hasMany(models.orderDrug, {
+    user.hasMany(models.drugOrder, {
       foreignKey: {
         name: "receivedUserId"
       },
@@ -115,13 +115,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
 
-
-    user.belongsTo(models.workspace,{
-      foreignKey: {
-        name: "workspaceId"
-      },
-      onDelete: 'RESTRICT'
-    });
 
     }
 

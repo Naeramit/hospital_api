@@ -1,13 +1,22 @@
 const { user, selectedWorkspace, workspace} = require('../models');
-const {Op} = require('sequelize')
-
-exports.getUserByUsername = username =>  user.findOne( { where: { username: username } } )
-
-
-exports.createUser = registryInput => user.create(registryInput);
 
 
 exports.createSelectedWorkspace = workspacesInput =>  selectedWorkspace.bulkCreate(workspacesInput)
+
+exports.getUserById = id => user.findOne({
+    where: {id},
+    attributes: ["id", "username", "firstName" , "lastName", "gender", "role", "status"],
+    include: {
+        model: selectedWorkspace, 
+        attributes: ["workspaceId"],
+        include: {
+            model: workspace,
+            where: {status: 1},
+            attributes: ["name"]
+        }
+    }
+})
+
 
 exports.removeSelectedWorkspace = workspacesInput =>  {
     for ( obj of workspacesInput) {
@@ -28,21 +37,8 @@ exports.checkSelectedUserWorkspace = userId => selectedWorkspace.findAll({
     })
 
 
-exports.getUserById = id => user.findOne({
-    where: {id},
-    attributes: ["id", "username", "firstName" , "lastName", "gender", "role", "status",  "workspaceId" ],
-    include: {
-        model: selectedWorkspace, 
-        attributes: ["workspaceId"],
-        include: {
-            model: workspace,
-            attributes: ["name"]
-        }
-    }
-})
 
 
 
-exports.changeUserPassword = (id, newPassword) => user.update(
-    {password: newPassword},{where: {id}
-})
+
+

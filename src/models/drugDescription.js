@@ -10,6 +10,15 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
           }
         },
+        status: {
+          type: DataTypes.INTEGER,
+          defaultValue: 1,
+          allowNull: false,
+          validate: {
+              notEmpty: true
+          }
+          // '0: not available   1: available'
+        }
       },
       {
         underscored: true
@@ -27,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       );
 
-      drugDescription.hasMany( models.orderDrug, {
+      drugDescription.hasMany( models.drugOrder, {
         foreignKey: {
           name: "drugDescriptionId",
           allowNull: false

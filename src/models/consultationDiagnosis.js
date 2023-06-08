@@ -17,7 +17,16 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
             // '1: principle diagnosis 2: comorbidity 3: complication 4: external cause'
-        }
+        },
+        status: {
+          type: DataTypes.INTEGER,
+          defaultValue: 1,
+          allowNull: false,
+          validate: {
+              notEmpty: true
+          }
+          // '0: cancel 1: record
+        },
       },
       {
         underscored: true

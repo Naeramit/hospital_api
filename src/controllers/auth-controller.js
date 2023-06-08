@@ -44,6 +44,12 @@ exports.login = async (req, res, next) => {
       createError('invalid credential', 400)
     }
 
+    if (user.status == 0) {
+      createError('invalid credential', 400)
+    }
+
+
+
     const accessToken = sign({id: user.id})
     res.status(200).json({accessToken})
 
