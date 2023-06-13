@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 notEmpty: true
             }
-            // '1: principle diagnosis 2: comorbidity 3: complication 4: external cause'
+            // '1: principle  2: comorbidity 3: complication 4: external cause'
         },
         status: {
           type: DataTypes.INTEGER,

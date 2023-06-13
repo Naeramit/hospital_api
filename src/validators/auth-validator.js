@@ -4,13 +4,10 @@ const validate = require('./validate');
 const registrySchema = Joi.object({
     username: Joi.string().trim().required(),
     password: Joi.string().trim().required().pattern(/^[a-zA-Z0-9]{4,30}$/),
-    confirmPassword: Joi.string().trim().required().valid(Joi.ref('password')).strip(),
     firstName: Joi.string().trim().required(),
     lastName: Joi.string().trim().required(),
     gender: Joi.number().integer(),
     role: Joi.number().integer(),
-    licenseNumber: Joi.string().trim(),
-    status: Joi.number().integer()
 })
 
 

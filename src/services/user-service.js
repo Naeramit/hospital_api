@@ -28,7 +28,7 @@ exports.getUserById = async id => {
 }
 
 exports.newPassword = (userId, newPassword) => user.update(
-    {password: newPassword},{
+    {password: newPassword, status: 2},{
         where: {
             id: userId
         }
@@ -97,14 +97,14 @@ exports.getHistory = (consultationId) => consultation.findAll({
         id: consultationId, 
         status:1
     },
-    attributes : ["id","cc", "pi", "ph", "pe", "addition", "createdAt", "createdUserId", "attendUserId"],
+    attributes : ["id","cc", "pi", "ph", "pe", "addition", "createdAt", "attendUserId", "createdUserId"],
     include: [{
         model: user, 
         attributes: ["firstName", "lastName", "gender", "role"]
     },
     {
         model: patient,
-        attributes: ["id","firstName", "lastName", "gender"]
+        attributes: ["id","firstName", "lastName", "gender", "healthInsurance", "birthdate" ]
     }],
 })
 
@@ -120,7 +120,8 @@ exports.getAllDiagnosis = (consultationId) => consultationDiagnosis.findAll({
         consultationId: consultationId,
         status: 1
     },
-    attributes : ["id", "diagnosis", "type"]
+    attributes : ["id", "diagnosis", "type"],
+    order:["type"]
     });
 
 

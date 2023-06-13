@@ -8,7 +8,7 @@ const {sign} = require('../services/token-service');
 
 exports.registry = async (req, res, next) => {
   try {
-    const input = validateRegistry(req.body);
+    const input = req.body;
     const  usernameExist = await getUserByUsername(input.username)
 
     if (usernameExist) {
@@ -19,9 +19,7 @@ exports.registry = async (req, res, next) => {
 
     const createdUser = await  createUser(input);
 
-    const accessToken = sign({id: createdUser.id});
-
-    res.status(200).json({accessToken})
+    res.status(200).json({username: createdUser.username})
 
   }catch(err){
     next(err)

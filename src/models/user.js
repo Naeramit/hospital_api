@@ -49,8 +49,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         licenseNumber: {
-            type: DataTypes.STRING,
-            unique: true
+            type: DataTypes.STRING
         },
         status: {
             type: DataTypes.INTEGER,
@@ -69,6 +68,13 @@ module.exports = (sequelize, DataTypes) => {
 
     user.associate = models => {
     
+      user.hasMany(models.consultation, {
+          foreignKey: {
+            name: "attendUserId"
+          },
+          onDelete: 'RESTRICT'
+      });
+      
     user.hasMany(models.consultation, {
         foreignKey: {
           name: "createdUserId",
@@ -77,12 +83,6 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'RESTRICT'
     });
 
-    user.hasMany(models.consultation, {
-        foreignKey: {
-          name: "attendUserId"
-        },
-        onDelete: 'RESTRICT'
-    });
 
     user.hasMany(models.drugOrder, {
       foreignKey: {

@@ -54,18 +54,19 @@ module.exports = (sequelize, DataTypes) => {
 
         consultation.belongsTo(models.user, {
             foreignKey: {
+            name: "attendUserId"
+            },
+            onDelete: 'RESTRICT'
+        });
+        
+        consultation.belongsTo(models.user, {
+            foreignKey: {
               name: "createdUserId",
               allowNull: false
             },
             onDelete: 'RESTRICT'
         });
 
-        consultation.belongsTo(models.user, {
-            foreignKey: {
-            name: "attendUserId"
-            },
-            onDelete: 'RESTRICT'
-        });
 
         consultation.belongsTo(models.workspace,{
             foreignKey: {
