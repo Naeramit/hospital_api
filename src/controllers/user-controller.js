@@ -249,7 +249,9 @@ exports.getAllDrugOrder = async (req, res, next) => {
             createError("The consultation has  deleted", 403)
         }
         const allOrder = await userService.getAllDrugOrder(consultationId)
-        res.json(allOrder)
+        const parseAllorder = JSON.parse(JSON.stringify(allOrder))
+        const modifyAllOrder = parseAllorder.map(order => {return {...order, "type": 1}})
+        res.json(modifyAllOrder)
     } catch (err) {
         next(err)
     }
@@ -275,10 +277,16 @@ exports.addDrugOrder = async (req, res, next) => {
 
         const {drugOrder} = req.body
 
-        const payload = drugOrder.map( c => {return { consultationId: consultationId ,drugId: c.drugId, drugDescriptionId: c.drugDescriptionId, unitNumber: c.unitNumber, createdUserId: req.user.id,  }})
+        const payload = drugOrder.map( c => {return { consultationId: consultationId ,drugId: c.drugId, drugDescriptionId: c.drugDescriptionId, unitNumber: c.unitNumber, createdUserId: req.user.id, onset: c.onset }})
 
         const addResult = await userService.addDrugOrder(payload)
-        res.json(addResult)
+
+        const parseAddResult = JSON.parse(JSON.stringify(addResult))
+
+        console.log(parseAddResult)
+
+        const modifyAddResult = await userService.getDrugOrder(parseAddResult[0].id)
+        res.json(modifyAddResult)
     } catch (err) {
         next(err)
     }

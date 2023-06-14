@@ -1,4 +1,4 @@
-const { user, workspace, consultation, patient, consultationDiagnosis, drugOrder} = require('../models');
+const { user, workspace, consultation, patient, consultationDiagnosis, drugOrder, drug, drugDescription} = require('../models');
 const { Op } = require("sequelize");
 const {createSelectedWorkspace ,getUserById, checkSelectedUserWorkspace,removeSelectedWorkspace} = require('../repositories/user-repository');
 
@@ -97,7 +97,7 @@ exports.getHistory = (consultationId) => consultation.findAll({
         id: consultationId, 
         status:1
     },
-    attributes : ["id","cc", "pi", "ph", "pe", "addition", "createdAt", "attendUserId", "createdUserId"],
+    attributes : ["id","cc", "pi", "ph", "pe", "addition", "createdAt", "attendUserId", "createdUserId", "workspaceId"],
     include: [{
         model: user, 
         attributes: ["firstName", "lastName", "gender", "role"]
@@ -105,7 +105,7 @@ exports.getHistory = (consultationId) => consultation.findAll({
     {
         model: patient,
         attributes: ["id","firstName", "lastName", "gender", "healthInsurance", "birthdate" ]
-    }],
+    },],
 })
 
 exports.updateHistory = (consultationId, payload) => consultation.update(
@@ -152,7 +152,15 @@ exports.getAllDrugOrder = (consultationId) => drugOrder.findAll({
         consultationId: consultationId,
         status: 1
     },
-    attributes : ["id", "drugId", "drugDescriptionId", "unitNumber",  "receivedUserId"]
+    attributes : ["id", "drugId", "drugDescriptionId", "unitNumber",  "receivedUserId", "unitNumber", "onset"],
+    include: [{
+        model: drug, 
+        attributes: ["name", "costPerUnit"]
+    },{
+        model: drugDescription, 
+        attributes: ["description"]
+    }
+    ]
 })
 
 exports.addDrugOrder = (payload) => drugOrder.bulkCreate(payload)
@@ -163,7 +171,15 @@ exports.getDrugOrder = (drugorderId) => drugOrder.findAll({
         id: drugorderId,
         status: 1
     },
-    attributes : ["id", "drugId", "drugDescriptionId", "unitNumber",  "receivedUserId" ,"createdUserId"]
+    attributes : ["id", "drugId", "drugDescriptionId", "unitNumber",  "receivedUserId" ,"createdUserId", "unitNumber", "onset"],
+    include: [{
+        model: drug, 
+        attributes: ["name", "costPerUnit"]
+    },{
+        model: drugDescription, 
+        attributes: ["description"]
+    }
+    ]
     });
 
 
