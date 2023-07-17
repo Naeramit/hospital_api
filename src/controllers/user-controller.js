@@ -2,6 +2,9 @@ const userService = require('../services/user-service');
 const {hash} = require('../services/bcrypt-service');
 const { validateChangePassword } = require('../validators/user-validator');
 const  createError = require('../utils/create-error')
+const {drugPrediction} = require('../utils/NLP/drugPrediction')
+
+
 
 
 
@@ -51,6 +54,7 @@ exports.updateMyWorkspace = async (req, res, next) => {
 
 exports.getAllTask =  async (req, res, next) => {
     try{
+
         const {workspaceId} = req.params
         const task = await userService.getAllTask(req.user.id, workspaceId)
         res.json(task)
@@ -243,6 +247,7 @@ exports.deleteDiagnosis = async (req, res, next) => {
 
 exports.getAllDrugOrder = async (req, res, next) => {
     try {
+
         const {consultationId} = req.params
         const result = await userService.checkConsultation(consultationId)
         if (result.length == 0) {
@@ -259,6 +264,7 @@ exports.getAllDrugOrder = async (req, res, next) => {
 
 exports.addDrugOrder = async (req, res, next) => {
     try {
+  
         const {consultationId} = req.params
         const history = await userService.getHistory(consultationId)
 
@@ -275,18 +281,42 @@ exports.addDrugOrder = async (req, res, next) => {
             await userService.updateHistory(consultationId, {attendUserId: req.user.Id})
         }
 
-        const {drugOrder} = req.body
+        const {orderText, unitNumber, onset} =  req.body
+        drugPrediction(orderText)
+        .then(prediction => {
+            if (prediction.intent == 'None'){
+                const payload = [{
+                    consultationId: consultationId ,
+                    drugId: 1, 
+                    drugDescriptionId: 1, 
+                    unitNumber: unitNumber, 
+                    createdUserId: req.user.id, 
+                    onset: onset,
+                    orderText: orderText
+                }]
+                userService.addDrugOrder(payload)
+                .then(rsAdd => {
+                    const parseAddResult = JSON.parse(JSON.stringify(rsAdd))
+                    userService.getDrugOrder(parseAddResult[0].id)
+                    .then(rs => {
+                        res.json(rs)
+                    })
+                })                          
+            }else{
+                res.json(prediction)
+                const payload = [{
+                    consultationId: consultationId ,
+                    drugId: 1, 
+                    drugDescriptionId: 1, 
+                    unitNumber: unitNumber, 
+                    createdUserId: req.user.id, 
+                    onset: onset,
+                    orderText: orderText
+                }]
 
-        const payload = drugOrder.map( c => {return { consultationId: consultationId ,drugId: c.drugId, drugDescriptionId: c.drugDescriptionId, unitNumber: c.unitNumber, createdUserId: req.user.id, onset: c.onset }})
-
-        const addResult = await userService.addDrugOrder(payload)
-
-        const parseAddResult = JSON.parse(JSON.stringify(addResult))
-
-        console.log(parseAddResult)
-
-        const modifyAddResult = await userService.getDrugOrder(parseAddResult[0].id)
-        res.json(modifyAddResult)
+                // res.json({order: prediction.answer, unitNumber, onset})
+            }
+        })
     } catch (err) {
         next(err)
     }

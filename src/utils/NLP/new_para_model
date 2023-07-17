@@ -1,0 +1,2252 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "1,4-6,500,hr,mg,o,paracetamol,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,o,para,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,para,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,para,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,o,para,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,para,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,mg,para,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,o,pr,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,pr,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,pr,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,o,pr,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,pr,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,mg,pr,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,paracet,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,paracet,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,hr,mg,paracet,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4-6,500,mg,paracet,q,tprn": {
+            "intent": "para500.1topq4-6",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,o,paracetamol,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,o,para,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,para,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,para,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,o,para,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,para,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,mg,para,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,o,pr,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,pr,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,pr,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,o,pr,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,pr,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,mg,pr,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,paracet,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,paracet,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,hr,mg,paracet,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,4,500,mg,paracet,q,tprn": {
+            "intent": "para500.1topq4",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,o,paracetamol,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,o,para,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,para,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,para,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,o,para,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,para,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,mg,para,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,o,pr,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,pr,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,pr,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,o,pr,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,pr,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,mg,pr,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,paracet,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,paracet,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,hr,mg,paracet,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,6,mg,paracet,q,tprn": {
+            "intent": "para500.1topq6",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,o,paracetamol,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,o,para,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,para,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,para,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,o,para,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,para,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,mg,para,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,o,pr,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,pr,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,pr,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,o,pr,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,pr,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,mg,pr,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,paracet,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,paracet,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,hr,mg,paracet,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,500,8,mg,paracet,q,tprn": {
+            "intent": "para500.1topq8",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,o,paracetamol,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,mg,paracetamol,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,o,para,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,para,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,para,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,o,para,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,para,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,mg,para,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,o,pr,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,pr,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,pr,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,o,pr,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,pr,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,mg,pr,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,paracet,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,paracet,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,o,paracet,prn,q,tab": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,hr,mg,paracet,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          },
+          "1,12,500,mg,paracet,q,tprn": {
+            "intent": "para500.1topq12",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "para500.1topq4-6": "default",
+          "para500.1topq4": "default",
+          "para500.1topq6": "default",
+          "para500.1topq8": "default",
+          "para500.1topq12": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tab o prn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 4-6 hr",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 4-6",
+            "intent": "para500.1topq4-6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tab o prn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 4 hr",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 4",
+            "intent": "para500.1topq4"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tab o prn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 6 hr",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 6",
+            "intent": "para500.1topq6"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tab o prn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 8 hr",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 8",
+            "intent": "para500.1topq8"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracetamol 500 mg 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para 500 mg 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "para(500) 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr 500 mg 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "pr(500) 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet 500 mg 1 tprn q 12",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tab o prn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 12 hr",
+            "intent": "para500.1topq12"
+          },
+          {
+            "domain": "default",
+            "utterance": "paracet(500) 1 tprn q 12",
+            "intent": "para500.1topq12"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "1": 1,
+              "4": 1,
+              "6": 1,
+              "8": 1,
+              "12": 1,
+              "500": 1,
+              "paracetamol": 1,
+              "mg": 1,
+              "tab": 1,
+              "o": 1,
+              "prn": 1,
+              "q": 1,
+              "4-6": 1,
+              "hr": 1,
+              "tprn": 1,
+              "para": 1,
+              "pr": 1,
+              "paracet": 1
+            },
+            "intents": {
+              "para500.1topq4-6": 1,
+              "para500.1topq4": 1,
+              "para500.1topq6": 1,
+              "para500.1topq8": 1,
+              "para500.1topq12": 1
+            },
+            "intentFeatures": {
+              "para500.1topq4-6": {
+                "1": 1,
+                "500": 1,
+                "paracetamol": 1,
+                "mg": 1,
+                "tab": 1,
+                "o": 1,
+                "prn": 1,
+                "q": 1,
+                "4-6": 1,
+                "hr": 1,
+                "tprn": 1,
+                "para": 1,
+                "pr": 1,
+                "paracet": 1
+              },
+              "para500.1topq4": {
+                "1": 1,
+                "4": 1,
+                "500": 1,
+                "paracetamol": 1,
+                "mg": 1,
+                "tab": 1,
+                "o": 1,
+                "prn": 1,
+                "q": 1,
+                "hr": 1,
+                "tprn": 1,
+                "para": 1,
+                "pr": 1,
+                "paracet": 1
+              },
+              "para500.1topq6": {
+                "1": 1,
+                "6": 1,
+                "500": 1,
+                "paracetamol": 1,
+                "mg": 1,
+                "tab": 1,
+                "o": 1,
+                "prn": 1,
+                "q": 1,
+                "hr": 1,
+                "tprn": 1,
+                "para": 1,
+                "pr": 1,
+                "paracet": 1
+              },
+              "para500.1topq8": {
+                "1": 1,
+                "8": 1,
+                "500": 1,
+                "paracetamol": 1,
+                "mg": 1,
+                "tab": 1,
+                "o": 1,
+                "prn": 1,
+                "q": 1,
+                "hr": 1,
+                "tprn": 1,
+                "para": 1,
+                "pr": 1,
+                "paracet": 1
+              },
+              "para500.1topq12": {
+                "1": 1,
+                "12": 1,
+                "500": 1,
+                "paracetamol": 1,
+                "mg": 1,
+                "tab": 1,
+                "o": 1,
+                "prn": 1,
+                "q": 1,
+                "hr": 1,
+                "tprn": 1,
+                "para": 1,
+                "pr": 1,
+                "paracet": 1
+              }
+            },
+            "featuresToIntent": {
+              "1": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "4": [
+                "para500.1topq4"
+              ],
+              "6": [
+                "para500.1topq6"
+              ],
+              "8": [
+                "para500.1topq8"
+              ],
+              "12": [
+                "para500.1topq12"
+              ],
+              "500": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "paracetamol": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "mg": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "tab": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "o": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "prn": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "q": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "4-6": [
+                "para500.1topq4-6"
+              ],
+              "hr": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "tprn": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "para": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "pr": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "paracet": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "1",
+                "500",
+                "paracetamol",
+                "mg",
+                "tab",
+                "o",
+                "prn",
+                "q",
+                "4-6",
+                "hr",
+                "tprn",
+                "para",
+                "pr",
+                "paracet",
+                "4",
+                "6",
+                "8",
+                "12"
+              ],
+              "intents": [
+                "para500.1topq4-6",
+                "para500.1topq4",
+                "para500.1topq6",
+                "para500.1topq8",
+                "para500.1topq12"
+              ],
+              "perceptrons": [
+                [
+                  0.2929062843322754,
+                  0.2929062843322754,
+                  0.42913758754730225,
+                  -0.17215752601623535,
+                  0.07977483421564102,
+                  0.07977483421564102,
+                  0.07977483421564102,
+                  0.2929062843322754,
+                  13.07512378692627,
+                  -0.04178683087229729,
+                  0.22439417243003845,
+                  0.10226292908191681,
+                  -0.07152318209409714,
+                  -0.1392071694135666,
+                  -5.509493827819824,
+                  -3.4552547931671143,
+                  -2.206585168838501,
+                  -1.4997769594192505,
+                  0.14187953965757513
+                ],
+                [
+                  0.33007779717445374,
+                  0.33007779717445374,
+                  0.46624135971069336,
+                  -0.1486751288175583,
+                  0.09383093565702438,
+                  0.09383093565702438,
+                  0.09383093565702438,
+                  0.33007779717445374,
+                  -1.4490398168563843,
+                  -0.014371629804372787,
+                  0.23802568018436432,
+                  0.10229475051164627,
+                  -0.0715058296918869,
+                  -0.13921627402305603,
+                  13.074994087219238,
+                  -5.509493827819824,
+                  -3.455305814743042,
+                  -2.206674575805664,
+                  0.16175726508294594
+                ],
+                [
+                  0.3301110863685608,
+                  0.3301110863685608,
+                  0.4662425220012665,
+                  -0.14867359399795532,
+                  0.09383858740329742,
+                  0.09383858740329742,
+                  0.09383858740329742,
+                  0.3301110863685608,
+                  -2.2062339782714844,
+                  -0.014367318712174892,
+                  0.23805011808872223,
+                  0.10230401903390884,
+                  -0.0714915320277214,
+                  -0.13920952379703522,
+                  -1.4491596221923828,
+                  13.074844360351562,
+                  -5.509528636932373,
+                  -3.455362558364868,
+                  0.1617736621774695
+                ],
+                [
+                  0.33015015721321106,
+                  0.33015015721321106,
+                  0.46623557806015015,
+                  -0.14866994321346283,
+                  0.09384825080633163,
+                  0.09384825080633163,
+                  0.09384825080633163,
+                  0.33015015721321106,
+                  -3.45462703704834,
+                  -0.014365024864673615,
+                  0.23808009922504425,
+                  0.10231933742761612,
+                  -0.07147366553544998,
+                  -0.13919784128665924,
+                  -2.206420421600342,
+                  -1.4493361711502075,
+                  13.074663162231445,
+                  -5.509637832641602,
+                  0.1617934049536929
+                ],
+                [
+                  0.3301740288734436,
+                  0.3301740288734436,
+                  0.4662538468837738,
+                  -0.1486750841140747,
+                  0.093854621052742,
+                  0.093854621052742,
+                  0.093854621052742,
+                  0.3301740288734436,
+                  -5.508884429931641,
+                  -0.014363355934619904,
+                  0.23809757828712463,
+                  0.1023319885134697,
+                  -0.07147151231765747,
+                  -0.13920438289642334,
+                  -3.454941987991333,
+                  -2.206602096557617,
+                  -1.4494684934616089,
+                  13.074569702148438,
+                  0.1618053265387875
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "paracetamol 500 mg 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "para 500 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "para(500) 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "pr 500 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "pr(500) 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "paracet 500 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tab o prn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 4-6 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 4-6"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 4"
+      ],
+      [
+        "en",
+        "para 500 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 4"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 4"
+      ],
+      [
+        "en",
+        "para(500) 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 4"
+      ],
+      [
+        "en",
+        "pr 500 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 4"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 4"
+      ],
+      [
+        "en",
+        "pr(500) 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 4"
+      ],
+      [
+        "en",
+        "paracet 500 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 4"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 4"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tab o prn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 4 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 4"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 6"
+      ],
+      [
+        "en",
+        "para 500 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 6"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 6"
+      ],
+      [
+        "en",
+        "para(500) 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 6"
+      ],
+      [
+        "en",
+        "pr 500 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 6"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 6"
+      ],
+      [
+        "en",
+        "pr(500) 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 6"
+      ],
+      [
+        "en",
+        "paracet 500 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 6"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 6"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tab o prn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 6 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 6"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 8"
+      ],
+      [
+        "en",
+        "para 500 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 8"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 8"
+      ],
+      [
+        "en",
+        "para(500) 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 8"
+      ],
+      [
+        "en",
+        "pr 500 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 8"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 8"
+      ],
+      [
+        "en",
+        "pr(500) 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 8"
+      ],
+      [
+        "en",
+        "paracet 500 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 8"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 8"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tab o prn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 8 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 8"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "paracetamol 500 mg 1 tprn q 12"
+      ],
+      [
+        "en",
+        "para 500 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "para 500 1 tprn q 12"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "para 500 mg 1 tprn q 12"
+      ],
+      [
+        "en",
+        "para(500) 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "para(500) 1 tprn q 12"
+      ],
+      [
+        "en",
+        "pr 500 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "pr 500 1 tprn q 12"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "pr 500 mg 1 tprn q 12"
+      ],
+      [
+        "en",
+        "pr(500) 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "pr(500) 1 tprn q 12"
+      ],
+      [
+        "en",
+        "paracet 500 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet 500 1 tprn q 12"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet 500 mg 1 tprn q 12"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tab o prn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 12 hr"
+      ],
+      [
+        "en",
+        "paracet(500) 1 tprn q 12"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "para500.1topq4-6": [
+          {
+            "answer": "paracetamol 500 mg 1 tab o prn q 4-6 hr"
+          }
+        ],
+        "para500.1topq4": [
+          {
+            "answer": "paracetamol 500 mg 1 tab o prn q 4 hr"
+          }
+        ],
+        "para500.1topq6": [
+          {
+            "answer": "paracetamol 500 mg 1 tab o prn q 6 hr"
+          }
+        ],
+        "para500.1topq8": [
+          {
+            "answer": "paracetamol 500 mg 1 tab o prn q 8 hr"
+          }
+        ],
+        "para500.1topq12": [
+          {
+            "answer": "paracetamol 500 mg 1 tab o prn q 12 hr"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

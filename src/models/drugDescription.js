@@ -38,8 +38,7 @@ module.exports = (sequelize, DataTypes) => {
 
       drugDescription.hasMany( models.drugOrder, {
         foreignKey: {
-          name: "drugDescriptionId",
-          allowNull: false
+          name: "drugDescriptionId"
         },
         onDelete: 'RESTRICT'
       });

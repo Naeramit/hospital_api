@@ -30,6 +30,13 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
             // '0: undefined   1: OPD/ER  2: After discharge 3: After admit '
+        },
+        orderText:{
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
         }
       },
       {
@@ -49,16 +56,14 @@ module.exports = (sequelize, DataTypes) => {
 
         drugOrder.belongsTo(models.drug, {
             foreignKey: {
-            name: "drugId",
-            allowNull: false
+            name: "drugId"
             },
             onDelete: 'RESTRICT'
         });
 
         drugOrder.belongsTo( models.drugDescription,{
             foreignKey: {
-                name: "drugDescriptionId",
-                allowNull: false
+                name: "drugDescriptionId"
             },
             onDelete: 'RESTRICT'
         });

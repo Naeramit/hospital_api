@@ -1,59 +1,81 @@
-const { sequelize, user , patient, workspace, drug, drugSynonym ,drugDescription, drugDescriptionSynonym, selectedWorkspace, consultation} = require('../models');
-const {hash} = require('../services/bcrypt-service')
+const { sequelize, user, patient, workspace, drug, drugSynonym, drugDescription, drugDescriptionSynonym, selectedWorkspace, consultation } = require('../models');
+const { hash } = require('../services/bcrypt-service')
 
 const mocData = async () => {
 
-    await sequelize.sync({force: true})
-        
-    const hasedPassword = await hash("1234")
-    
+    await sequelize.sync({ force: true })
+
+    const hasedPassword = await hash("123456")
+
     await user.bulkCreate([
         {
-            username: "nmry", 
+            username: "nmry",
             password: hasedPassword,
             firstName: "naeramit",
             lastName: "ridtiya",
             gender: 1,
             role: 1,
-            status: 2  
+            status: 2
         },
         {
-            username: "AAAA", 
+            username: "SAWADDEE",
             password: hasedPassword,
-            firstName: "AAAA",
-            lastName: "AAAA",
+            firstName: "สวัสดี",
+            lastName: "มีสุข",
             gender: 1,
             role: 2,
             licenseNumber: "ว.51856",
-            status: 2  
+            status: 2
         },
         {
-            username: "BBBB", 
+            username: "SABUYDEE",
             password: hasedPassword,
-            firstName: "BBBB",
-            lastName: "BBBB",
+            firstName: "สบายดี",
+            lastName: "มีสุข",
             gender: 2,
             role: 4,
             licenseNumber: "9876543210",
-            status: 2  
-        }
-    ]) 
+            status: 2
+        },
+
+    ])
 
     await patient.bulkCreate([
         {
-            firstName: "Patient1",
-            lastName: "Patient1",
+            firstName: "กานดา",
+            lastName: "มาสาย",
             gender: 1,
-            healthInsurance: 1,  
+            healthInsurance: 1,
             birthdate: "1991-01-01 00:00:00+00:00"
         },
         {
-            firstName: "Patient2",
-            lastName: "Patient2",
-            gender: 1,
-            healthInsurance: 1,  
+            firstName: "มานี",
+            lastName: "มีเวลา",
+            gender: 2,
+            healthInsurance: 1,
             birthdate: "1989-01-01 00:00:00+00:00"
-        } 
+        },
+        {
+            firstName: "มานะ",
+            lastName: "สาระดี",
+            gender: 1,
+            healthInsurance: 1,
+            birthdate: "1989-01-01 00:00:00+00:00"
+        },
+        {
+            firstName: "ประยุทธ์",
+            lastName: "จันโอชะ",
+            gender: 1,
+            healthInsurance: 1,
+            birthdate: "1969-01-01 00:00:00+00:00"
+        },
+        {
+            firstName: "ประวิท",
+            lastName: "ยืมเพื่อนมา",
+            gender: 1,
+            healthInsurance: 1,
+            birthdate: "1969-01-01 00:00:00+00:00"
+        }
     ])
 
     await workspace.bulkCreate([
@@ -223,23 +245,25 @@ const mocData = async () => {
     ])
 
     await selectedWorkspace.bulkCreate([
-        {userId: 2 , workspaceId: 1},
-        {userId: 2 , workspaceId: 4},
-        {userId: 2 , workspaceId: 5},
-        {userId: 3 , workspaceId: 1},
-        {userId: 3 , workspaceId: 2},
+        { userId: 2, workspaceId: 1 },
+        { userId: 2, workspaceId: 4 },
+        { userId: 2, workspaceId: 5 },
+        { userId: 3, workspaceId: 1 },
+        { userId: 3, workspaceId: 2 },
     ])
 
     await consultation.bulkCreate([
-        {cc:"ปวดศีรษะ 1 moPTA",createdUserId: 3, workspaceId: 1,  patientId: 1 },
-        {cc:"ปวดขา 1 moPTA",createdUserId: 3, workspaceId: 1,  patientId: 2 },
-        {cc:"นัดตรวจ IHD",createdUserId: 3, workspaceId: 2,  patientId: 2 },
+        { cc: "ปวดศีรษะ 1 moPTA", createdUserId: 3, workspaceId: 1, patientId: 1 },
+        { cc: "ปวดขา 1 moPTA", createdUserId: 3, workspaceId: 1, patientId: 2 },
+        { cc: "นัดตรวจ IHD", createdUserId: 3, workspaceId: 1, patientId: 3 },
+        { cc: "ปวดใจ  1 moPTA", createdUserId: 3, workspaceId: 1, patientId: 4 },
+        { cc: "นอนไม่หลับ  1 moPTA", createdUserId: 3, workspaceId: 1, patientId: 5 },
     ])
 }
 
 try {
     mocData()
 
-} catch (err){
-   console.log(err)
+} catch (err) {
+    console.log(err)
 }

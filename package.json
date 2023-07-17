@@ -21,6 +21,7 @@
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.0",
     "mysql2": "^3.3.3",
+    "node-nlp": "^4.27.0",
     "sequelize": "^6.32.0"
   },
   "devDependencies": {
